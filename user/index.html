@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/styleuser.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+      <div class="nav-right">
+        <a href="#"><i class="fas fa-list"></i> Form Pengajuan</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+    <!-- Akhir Navbar -->
+
+    <!-- Form pengajuan -->
+    <div class="container">
+      <h3>Form pengajuan permohonan cerai</h3>
+      <div class="pengajuan">
+        <form>
+          <label for="">Nama Lengkap</label>
+          <input type="text" id="namal" name="nama" placeholder="Nama Lengkap" />
+
+          <label for="">NIK</label>
+          <input type="number" name="nik" placeholder="Masukan NIK" />
+
+          <label for="jk">Jenis Kelamin</label>
+          <select name="jk">
+            <option value="Islam">...</option>
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+          </select>
+
+          <label for="">Tempat Lahir</label>
+          <input type="text" name="tlahir" placeholder="Tempat Lahir" />
+
+          <label for="">Tanggal Lahir</label>
+          <input type="date" name="ttl" />
+
+          <label for="agama">Agama</label>
+          <select name="agama">
+            <option value="Islam">...</option>
+            <option value="Islam">Islam</option>
+            <option value="Kristen">Khonghucu</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Protestan">Protestan</option>
+            <option value="Khatolik">Khatolik</option>
+          </select>
+
+          <label for="">Pekerjaan</label>
+          <input type="text" name="pekerjaan" placeholder="Pekerjaan" />
+
+          <label for="">Kartu Tanda Penduduk</label>
+          <input type="file" name="ktp" />
+
+          <label for="">Surat Nikah</label>
+          <input type="file" name="snikah" />
+
+          <label for="">Kartu Keluarga</label>
+          <input type="file" name="kk" />
+
+          <label for="">Akte Kelahiran Anak (opsional)</label>
+          <input type="file" name="akte" />
+
+          <label for="">Surat Keterangan Desa</label>
+          <input type="file" name="sdesa" />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
