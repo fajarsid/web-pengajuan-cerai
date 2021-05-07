@@ -1,8 +1,8 @@
-<?php 
+<!-- <?php 
   require 'validasi.php';
 
  
-?>
+?> -->
 
 
 
@@ -88,7 +88,7 @@
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script>
       $(document).ready(function () {
-        $("#example").DataTable();
+        $("#tabel-admin").DataTable();
       });
     </script>
   </body>
