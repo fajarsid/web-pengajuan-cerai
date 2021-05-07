@@ -1,3 +1,11 @@
+<?php 
+  require '../config.php';
+  require '../validasi.php';
+
+ 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,25 +16,24 @@
 
     <link rel="stylesheet" href="../css/styleuser.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Document</title>
+    <title>Dashboard</title>
   </head>
   <body>
     <!-- Navbar -->
     <div class="navbar">
-      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
       <div class="nav-right">
-        <a href="#"><i class="fas fa-list"></i> Form Pengajuan</a>
-        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <a href="index.html"><i class="fas fa-list"></i> Form Pengajuan</a>
+        <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </div>
     <!-- Akhir Navbar -->
-
     <!-- Form pengajuan -->
     <div class="container">
       <h3>Form pengajuan permohonan cerai</h3>
       <div class="pengajuan">
-        <form>
+        <form action="proses_act.php" method="post" enctype="multipart/form-data">
           <label for="">Nama Lengkap</label>
           <input type="text" id="namal" name="nama" placeholder="Nama Lengkap" />
 
@@ -35,9 +42,9 @@
 
           <label for="jk">Jenis Kelamin</label>
           <select name="jk">
-            <option value="Islam">...</option>
-            <option value="Laki-Laki">Laki-Laki</option>
-            <option value="Perempuan">Perempuan</option>
+            <option value="...">...</option>
+            <option value="L">Laki-Laki</option>
+            <option value="P">Perempuan</option>
           </select>
 
           <label for="">Tempat Lahir</label>
@@ -59,23 +66,53 @@
 
           <label for="">Pekerjaan</label>
           <input type="text" name="pekerjaan" placeholder="Pekerjaan" />
+          <br> <br>
 
+          <!-- Alert file -->
+          <?php
+            if(isset($_GET['alert'])){
+              if($_GET['alert']=="gagal_ukuran"){
+                ?>
+                <div class="alert alert-warning">
+                  <strong>Warning!</strong> Ukuran File Terlalu Besar
+                </div>
+                <?php
+              }elseif ($_GET['alert']=="gagal_ekstensi") {
+                ?>
+                <div class="alert alert-warning">
+                  <strong>Warning!</strong> Ekstensi Gambar Tidak Diperbolehkan
+                </div>
+                <?php
+              }elseif ($_GET['alert']=="berhasil") {
+                ?>
+                <div class="alert alert-success">
+                  <strong>Success!</strong> Gambar Berhasil Disimpan
+                </div>
+                <?php
+              }				
+            }
+		      ?>
+          <!-- Form upload gambar -->
+          <p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg</p>
           <label for="">Kartu Tanda Penduduk</label>
-          <input type="file" name="ktp" />
+          <input type="file" name="ktp" required="required"/>
 
           <label for="">Surat Nikah</label>
-          <input type="file" name="snikah" />
+          <input type="file" name="snikah" required="required"/>
 
           <label for="">Kartu Keluarga</label>
-          <input type="file" name="kk" />
+          <input type="file" name="kk" required="required"/>
 
           <label for="">Akte Kelahiran Anak (opsional)</label>
-          <input type="file" name="akte" />
+          <input type="file" name="akte" required="required" />
 
           <label for="">Surat Keterangan Desa</label>
-          <input type="file" name="sdesa" />
+          <input type="file" name="sdesa" required="required"/>
 
-          <input type="submit" value="Submit" />
+          <label for="">Alamat</label>
+          <textarea type="textarea" name="alamat"> </textarea>
+
+          <input type="submit" value="Simpan" name="simpandata"/>
         </form>
       </div>
     </div>

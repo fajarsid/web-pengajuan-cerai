@@ -1,3 +1,36 @@
+<?php 
+    require 'config.php';
+    
+
+      // cek login
+      if(isset($_POST['login_user'])){
+          $email = $_POST['email'];
+          $password = $_POST['password'];
+  
+          // mencocokan database ada atau engga
+          $cekdatabase = mysqli_query($connect, "SELECT * FROM user where email ='$email' and password='$password'");
+  
+          // hitung jumlah data
+          $hitung = mysqli_num_rows($cekdatabase);
+  
+          if($hitung > 0){
+              $_SESSION['log'] = 'True';
+              header('location:user/index.php');
+          } else {
+              header('location:loginuser.php');
+          }
+      }
+  
+  
+  if(!isset($_SESSION['log'])){
+  
+  } else{
+      header('location:user/index.php');
+  }
+ 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,22 +54,27 @@
             <div id="pointer-btn"></div>
           </div>
           <div class="card-body-login">
-            <form id="login-form" action="user/index.html">
-              <input class="input-form" type="email" placeholder="Masukan Email" required /><br /><br />
-              <input class="input-form" type="password" placeholder="Masukan Password" required /><br /><br /><br />
-              <input class="submit-form" type="submit" value="Login" />
+          
+          <!-- Login  -->
+            <form id="login-form" method="post">
+              <input class="input-form" type="email" placeholder="Masukan Email" required name="email" /><br /><br />
+              <input class="input-form" type="password" placeholder="Masukan Password" required name="password" /><br /><br /><br />
+              <input class="submit-form" type="submit" value="Login" name="login_user"/>
             </form>
-            <form id="register-form">
-              <input class="input-form" type="name" placeholder="Nama Lengkap" required /><br /><br />
-              <input class="input-form" type="email" placeholder="Email" required /><br /><br />
-              <input class="input-form" type="password" placeholder="Password" required /><br /><br />
-              <input class="submit-form" type="submit" value="Daftar" />
+
+          <!-- Daftar -->
+            <form id="register-form" method="post" action="loginuser.php">
+              <input class="input-form" type="nama" placeholder="Username" name="username" required /><br /><br />
+              <input class="input-form" type="email" placeholder="Email" name="email" required /><br /><br />
+              <input class="input-form" type="password" placeholder="Password" name="password" required /><br /><br />
+              <!-- <input class="input-form" type="password" placeholder="Confrim Password" name="password2"  required /><br /><br /> -->
+              <input class="submit-form" type="submit" value="Daftar" name="daftaruser"/>
             </form>
           </div>
         </div>
         <form>
           <div class="admin">
-            <p>Masuk sebagai <a href="loginadmin.html">Admin</a></p>
+            <p>Masuk sebagai <a href="loginadmin.php">Admin</a></p>
           </div>
         </form>
       </div>
