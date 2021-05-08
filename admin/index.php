@@ -56,7 +56,8 @@
             <th>Nama</th>
             <th>NIK</th>
             <th>JK</th>
-            <th>TTL</th>
+            <th>Tempat Lahir</th>
+            <th>Tanggal Lahir</th>
             <th>Agama</th>
             <th>Pekerjaan</th>
             <th>KTP</th>
@@ -81,6 +82,7 @@
                   <td>$tampil[nama]</td>
                   <td>$tampil[nik]</td>
                   <td>$tampil[jk]</td>
+                  <td>$tampil[tlahir]</td>
                   <td>$tampil[ttl]</td>
                   <td>$tampil[agama]</td>
                   <td>$tampil[pekerjaan]</td>

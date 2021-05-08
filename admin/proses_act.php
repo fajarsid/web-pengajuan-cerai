@@ -37,7 +37,7 @@
     $ext = pathinfo($ktp, PATHINFO_EXTENSION);
 
     if(!in_array($ext, $ekstensi)){
-        header("Location:index.php?alert=gagal_ekstensi");
+        header("location:index.php?alert=gagal_ekstensi");
         
     } else{
         if($ukuran < 1044070){
@@ -56,10 +56,10 @@
             VALUES('$nama','$nik','$jk', '$tlahir', '$ttl', '$agama', 
             '$pekerjaan', '$xx', '$xsnikah', '$xkk', '$xakte', '$xsdesa', '$alamat' )");
             // echo (".'$nama'.'$nik'.'$jk'.'$tlahir'.'$ttl'.'$agama'.'$pekerjaan'.'$xx'.'$xsnikah'.'$xkk'.'$xakte'.'$xsdesa'.");
-            header("Locatin:index.php?alert=berhasil");
+            header("locatin:index.php?alert=berhasil");
         } else {
             echo (".'$nama'.'$nik'.'$jk'.'$tlahir'.'$ttl'.'$agama'.'$pekerjaan'.");
-            header("Location:index.php?alert=gagal_ukuran");
+            header("location:index.php?alert=gagal_ukuran");
         }
     }
 
