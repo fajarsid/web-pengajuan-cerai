@@ -84,17 +84,17 @@
                   <td>$tampil[ttl]</td>
                   <td>$tampil[agama]</td>
                   <td>$tampil[pekerjaan]</td>
-                  <td>$tampil[ktp]</td>
-                  <td>$tampil[snikah]</td>
-                  <td>$tampil[kk]</td>
-                  <td>$tampil[akte]</td>
-                  <td>$tampil[sdesa]</td>
+                  <td><img src='../user/img/$tampil[ktp]' style='width:100px;height:100px;'/></td>
+                  <td><img src='../user/img/$tampil[snikah]' style='width:100px;height:100px;'/></td>
+                  <td><img src='../user/img/$tampil[kk]' style='width:100px;height:100px;'/></td>
+                  <td><img src='../user/img/$tampil[akte]' style='width:100px;height:100px;'/></td>
+                  <td><img src='../user/img/$tampil[sdesa]' style='width:100px;height:100px;'/></td>
                   <td>$tampil[alamat]</td>
                   <td>
                     <a href='edit_data.php?id=$tampil[idform]'> <span class='actionCust'>
                     <i class='far fa-edit'></i></>
                     </span></a>
-                    <a href='?idform=$tampil[idform]'> <span class='actionCust'>
+                    <a href='?id=$tampil[idform]'> <span class='actionCust'>
                     <i class='far fa-trash-alt'></i></>
                     </span></a>
                   </td>
@@ -104,6 +104,14 @@
             }
             ?>
         </tbody>
+        <?php
+          if(isset($_GET['id'])){
+            mysqli_query($connect, "DELETE FROM form WHERE idform ='$_GET[id]'");
+
+            echo 'Data terhapus';
+            echo "<meta http-equiv=refresh content=2;URL='index.php'>";
+          }
+          ?>
       </table>
     </div>
     

@@ -1,6 +1,6 @@
 <?php
   include "../config.php";
-    $sql  = mysqli_query($connect, "SELECT * FROM form WHERE idform ='$_GET[idform]'");
+    $sql  = mysqli_query($connect, "SELECT * FROM form WHERE idform ='$_GET[id]'");
     $data = mysqli_fetch_array($sql);
   ?>
 
@@ -41,7 +41,7 @@
 
           <label for="jk">Jenis Kelamin</label>
           <select name="jk" value="<?php echo $data['jk']; ?>">
-            <option value="<?php echo $data['jk']; ?>"></option>
+            <option value="<?php echo $data['jk']; ?>"><?php echo $data['jk'] == "L" ? "Laki-Laki" : "Perempuan"?></option>
             <option value="L">Laki-Laki</option>
             <option value="P">Perempuan</option>
           </select>
@@ -54,7 +54,7 @@
 
           <label for="agama">Agama</label>
           <select name="agama" value="<?php echo $data['agama']; ?>">
-            <option value="<?php echo $data['agama']; ?>"></option>
+            <option value="<?php echo $data['agama']; ?>"><?php echo $data['agama']; ?></option>
             <option value="Islam">Islam</option>
             <option value="Kristen">Khonghucu</option>
             <option value="Hindu">Hindu</option>
@@ -67,14 +67,13 @@
           <input type="text" name="pekerjaan" placeholder="Pekerjaan" value="<?php echo $data['pekerjaan']; ?>" />
          
           <label for="">Alamat</label>
-          <textarea type="textarea" name="alamat" value="<?php echo $data['alamat']; ?>"> </textarea>
+          <textarea type="textarea" name="alamat" value="<?php echo $data['alamat']; ?>"><?php echo $data['alamat']; ?></textarea>
 
           <input type="submit" value="Simpan" name="tambahdata"/>
         </form>
 
         <?php
             include "../config.php";
-
             if(isset($_POST['tambahdata'])){
                 mysqli_query($connect, "UPDATE form SET 
                 nama = '$_POST[nama]',
@@ -82,11 +81,13 @@
                 jk = '$_POST[jk]',
                 tlahir = '$_POST[tlahir]',
                 ttl = '$_POST[ttl]',
-                agama = '$_POST[agama]'
-                pekerjaan = '$_POST[pekerjaan]'
+                agama = '$_POST[agama]',
+                pekerjaan = '$_POST[pekerjaan]',
                 alamat = '$_POST[alamat]'
-                where idform = '$_GET[idform]'
+                where idform = '$_GET[id]'
                 ");
+
+                // echo("Eror : ".$connect -> error );
 
                 echo 'Permohonan telah diedit';
                 echo "<meta http-equiv=refresh content=1;URL='index.php'>";
