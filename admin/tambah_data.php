@@ -24,7 +24,7 @@
       <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
       <div class="nav-right">
         <a href="index.php"><i class="fas fa-list"></i> Form Pengajuan</a>
-        <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+        <a href="tambah_data.php"><i class="fa fa-fw fa-user"></i> Tambah Pemohon</a>
         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </div>

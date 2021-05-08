@@ -143,13 +143,9 @@ a {
   color: darksalmon;
 }
 
-.container-tabel {
-  max-width: 100%;
-  background: #fff;
-  margin: 50px auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-#tabel-admin {
-  width: 90%;
+.tambah-data {
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  background-color: salmon;
 }

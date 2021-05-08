@@ -1,5 +1,6 @@
 <?php
   require '../config.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +18,11 @@
   <body>
     <!-- Navbar -->
     <div class="navbar">
-      <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
       <div class="nav-right">
-        <a href="index.html"><i class="fas fa-list"></i> Form Pengajuan</a>
-        <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
-        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <a href="index.php"><i class="fas fa-list"></i> Form Pengajuan</a>
+        <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </div>
     <!-- Akhir Navbar -->
@@ -32,7 +33,7 @@
       <form action="#">
         <div class="form-row">
           <div class="input-data">
-            <input type="text" required disabled  />
+            <input type="text" required disabled />
             <div class="underline"></div>
             <label for="">Nama Lengkap</label>
           </div>
