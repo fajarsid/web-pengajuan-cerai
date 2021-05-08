@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2021 at 04:53 PM
+-- Generation Time: May 08, 2021 at 05:18 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -68,8 +68,6 @@ CREATE TABLE `form` (
 --
 
 INSERT INTO `form` (`idform`, `nama`, `nik`, `jk`, `tlahir`, `ttl`, `agama`, `pekerjaan`, `ktp`, `snikah`, `kk`, `akte`, `sdesa`, `alamat`) VALUES
-(1, 'pisau', 43435345, 'L', 'dfsfsffd', '2021-05-12', 'islam', 'dsfsd', '', '', '', '', '', 'dffds'),
-(2, 'Pisau', 343423, 'L', 'dsf', '2021-05-19', 'Kristen', 'dfddf', '1575257176_ogel.jpeg', '', '', '', '', ' fghhgfh'),
 (3, 'coba', 432443, 'L', 'fsdfs', '2021-05-11', 'Buddha', 'sfsfsdfs', '506259162_ogel-removebg-preview.png', 'ogel-removebg-preview.png', 'ogel-removebg-preview.png', 'ogel-removebg-preview.png', 'ogel-removebg-preview.png', ' fgdgdfgdfg'),
 (4, 'coba lagi', 3224234, 'P', 'sadadasd', '2021-05-04', 'Protestan', 'sdsadasd', '1606806438_team1-removebg-preview.png', 'phone.png', 'home.PNG', 'ui.png', 'isal-removebg-preview.png', ' cfdsvsvs');
 
@@ -91,10 +89,6 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `username`, `email`, `password`) VALUES
-(1, 'pisau', 'user@user.com', '12345'),
-(2, 'user', 'coba@coba.com', '12345'),
-(3, 'user', 'coba@coba.com', '12345'),
-(4, 'user', 'coba@coba.com', '12345'),
 (5, 'user', 'coba@coba.com', '12345');
 
 --
